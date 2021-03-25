@@ -59,8 +59,7 @@ const LoginScreen = () =>{
           alert(`Facebook Login Error: ${message}`);
         }
       };
-
-
+      
     return (
       <View style={styles.container}>
         <View style={styles.header}>
@@ -83,7 +82,7 @@ const LoginScreen = () =>{
             btnType="facebook"
             color="#FFFFFF"
             backgroundColor="#3488D6"
-            onPress={signUpFacebook}
+            onPress={() =>this.signUpFacebook()}
           />}
 
         <SocialButton

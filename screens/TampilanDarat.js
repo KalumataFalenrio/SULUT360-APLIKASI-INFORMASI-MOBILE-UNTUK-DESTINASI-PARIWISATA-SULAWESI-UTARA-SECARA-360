@@ -126,3 +126,35 @@ const styles = StyleSheet.create({
     },
 });
 export default DaratAPI;
+
+
+// import React, { useEffect,useState } from "react";
+// import { 
+//     View,
+//     Text,
+//     StyleSheet,
+//     Button,
+//     TouchableOpacity,
+// } from "react-native";
+// import { Feather } from '@expo/vector-icons';
+
+// //IMPORT CARD DAN API
+// import DaratAPI from '../API/DaratAPI';
+
+// const TampilanDarat  =({navigation}) =>{
+//     const goToMainMenu = () =>{
+//         navigation.navigate('MainMenu');
+
+//     }
+//     return(
+//         <View>
+//             <TouchableOpacity onPress={goToMainMenu}
+//         style={{position: 'absolute', left:20, top:40,
+//           backgroundColor:'#ff6200', padding:10, borderRadius:40,}}>
+//         <Feather name="arrow-left" size={24} color='#fff'/>
+//         </TouchableOpacity>
+//         <DaratAPI></DaratAPI>
+//         </View>
+//     )
+// }
+// export default TampilanDarat;
