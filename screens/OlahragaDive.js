@@ -8,7 +8,7 @@ const {width,height} = Dimensions.get('window')
 
 
 
-class TampilanDarat extends Component {
+class OlahragaDive extends Component {
   constructor(props) {
     super(props);
     this.state = { isLoading: true };
@@ -35,15 +35,13 @@ class TampilanDarat extends Component {
 
   render() {
     const cekCategory =(item)=>{
-      if(item.category == "Rekreasi"){
+      if(item.category == "Dive"){
         return(
-          
-              <View style={styles.cardView}>
+          <View style={styles.cardView}>
                 <TouchableOpacity onPress={()=>this.props.navigation.navigate('about',item)}>
                   <Text style={styles.sitename}>{item.site_name}</Text>
                   </TouchableOpacity>
                   <Image style={styles.image} source={item.thumbnail ? {uri: item.thumbnail } : null}/>
-                 
 
               <Button
                   buttonTitle="View 360"
@@ -53,7 +51,6 @@ class TampilanDarat extends Component {
                   onPress={()=>Linking.openURL(item.link_360)}
                 />
               </View>
-              
         )
       }
     }
@@ -117,15 +114,14 @@ const styles = StyleSheet.create({
     },
     cardView: {
       top:30,
-      backgroundColor: "grey",
+      backgroundColor: 'grey',
       margin: width * 0.03,
       height:height * 0.4,
       borderRadius: width * 0.05,
       shadowColor: '#000',
       shadowOffset: { width:0.5, height: 0.5 },
       shadowOpacity: 0.5,
-      shadowRadius: 3,
-      
+      shadowRadius: 3
   },
   sitename:{
       top:-20,
@@ -151,7 +147,7 @@ const styles = StyleSheet.create({
 });
 
 
-export default TampilanDarat;
+export default OlahragaDive;
 
 
 // import React, { useEffect,useState } from "react";
