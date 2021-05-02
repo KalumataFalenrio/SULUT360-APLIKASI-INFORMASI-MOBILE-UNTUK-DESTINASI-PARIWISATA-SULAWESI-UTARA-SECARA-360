@@ -1,10 +1,6 @@
 import React, { Component } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import { createAppContainer, createSwitchNavigator} from 'react-navigation';
-// import Header from './Component/Header';
-// import * as GoogleSignIn from 'expo-google-sign-in';
-// import { NavigationContainer } from '@react-navigation/native';
-// import { createDrawerNavigator } from '@react-navigation/drawer';
 
 //FIREBAS
 import * as firebase from 'firebase';
@@ -19,15 +15,15 @@ import LoginScreen from './screens/LoginScreen';
 import MainMenu from './screens/MainMenu';
 import LoadingScreen from './screens/LoadingScreen';
 import TempatWisata from './screens/TempatWisata';
-// import informationScreen from './screens/informationScreen';
 import AboutScreen from './screens/AboutScreen';
-// import feedbacksScreen from './screens/feedbacksScreen';
 import TampilanDarat from './screens/TampilanDarat';
 import TampilanUdara from './screens/TampilanUdara'
 import OlahragaDive from './screens/OlahragaDive';
-// import Budaya from './screens/Budaya';
+import Comments from './card/Comments';
 
+import { LogBox } from 'react-native';
 
+LogBox.ignoreLogs(['Setting a timer']);
 
 export default class App extends React.Component{
   render(){
@@ -35,24 +31,16 @@ export default class App extends React.Component{
   }
 }
 
-// const myApp = createDrawerNavigator({
-//   Home:{
-//    screen:menu
-//   },
-// })
-
 const AppSwitchNavigator = createSwitchNavigator({
   LoadingScreen:LoadingScreen,
   LoginScreen:LoginScreen,
   MainMenu:MainMenu,
   tempatwisata:TempatWisata,
-  // information:informationScreen,
   about:AboutScreen,
-  // feedbacks:feedbacksScreen,
   tampilandarat:TampilanDarat,
   tampilanudara:TampilanUdara,
   olahragadive:OlahragaDive,
-  // budaya:Budaya,
+  Comments:Comments,
 });
 
 const AppNavigator = createAppContainer(AppSwitchNavigator);

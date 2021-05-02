@@ -1,48 +1,33 @@
-import React, { Component, useState } from "react";
-import { View, Text, StyleSheet, 
-    Button, Image, ImageBackground, 
-    ScrollView, TouchableOpacity, FlatList, Dimensions, TextInput, ActivityIndicator } from 'react-native';
-import { Entypo, Feather } from '@expo/vector-icons';
+import React, { Component } from "react";
+import { View, Text, StyleSheet, Image, ImageBackground, 
+    ScrollView, TouchableOpacity, Dimensions,} from 'react-native';
 
 const height = Dimensions.get('window').height;
 
 const MainMenu = ({navigation}) =>{
-    
+
     const goTotempatwisata = () =>{
         navigation.navigate('tempatwisata');
       }
-      const goTomenu = () =>{
-        navigation.navigate('menu');
-      }
-      const goTotampilandarat = () =>{
+    const goTotampilandarat = () =>{
           navigation.navigate('tampilandarat')
       }
-      const goTotampilanudara = () =>{
+    const goTotampilanudara = () =>{
           navigation.navigate('tampilanudara')
       }
-      const goToolahragadive = () =>{
+    const goToolahragadive = () =>{
           navigation.navigate('olahragadive')
       }
     
         return (
             <View style={styles.container}>
                 <ImageBackground
-            source={require('../assets/images/Kawanua360spot1.png')}
+            source={{uri:'https://mpdigital.id/wp-content/uploads/2020/08/bunakenAerial.jpg'}}
             style={styles.loginImage}>
-                    <TouchableOpacity onPress={goTomenu}
-                    style={{position: 'absolute', left:20, top:40,
-                        backgroundColor:'#ff6200', padding:10, borderRadius:40, elevation: 5,}}>
-                    <Entypo name="menu" size={25} color='#fff'/>
-                    </TouchableOpacity>
-                <View> 
-                    {/* {this.state.search}
-                    <View style={{...StyleSheet.absoluteFill,
-                    alignItems:'center',justifyContent:'center'}}>
-                        <ActivityIndicator size="large" color="#ff6200"/>
-                    </View> */}
-                </View>
                 </ImageBackground>
-                
+                <View> 
+                </View>
+        
                 <ScrollView style={styles.description}>
                    <View>
                        
@@ -71,8 +56,7 @@ const MainMenu = ({navigation}) =>{
                                 style={{top:-60, left:-55,resizeMode:'center'}}
                             />
                              <Text style={{top:-140, paddingLeft:12, fontWeight:'bold', color:'#1D9885'}}>Olahraga & dive </Text>
-                        </TouchableOpacity>
-                    
+                        </TouchableOpacity>                    
                     </View> 
                     <TouchableOpacity onPress={goTotempatwisata}
                             style={styles.tampilkanbtn}>

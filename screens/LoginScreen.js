@@ -1,14 +1,12 @@
 import React, { Component, useState } from 'react';
-import { SafeAreaView ,View, Text, StyleSheet, Button, Image, TouchableOpacity } from 'react-native';
+import { SafeAreaView ,View, Text, StyleSheet, ImageBackground,TouchableOpacity,Dimensions } from 'react-native';
 import SocialButton from '../screens/SocialButton';
 import * as Facebook from "expo-facebook";
 import * as firebase from 'firebase';
+// import * as Google from 'expo-google-app-auth';
+const height = Dimensions.get('window').height;
 
 const LoginScreen = () =>{
-      
-      const goTomainmenu = () =>{
-        navigation.navigate('mainmenu');
-      }
 
   //Initialize Firebase
     const firebaseConfig = {
@@ -42,6 +40,7 @@ const LoginScreen = () =>{
           if (type === "success") {
             const credential = firebase.auth.FacebookAuthProvider.credential(token)
             firebase.auth().signInWithCredential(credential)
+            // console.log(token)
             .catch(error =>{
               console.log(error)
             })
@@ -59,12 +58,17 @@ const LoginScreen = () =>{
           alert(`Facebook Login Error: ${message}`);
         }
       };
-      
+
     return (
       <View style={styles.container}>
         <View style={styles.header}>
-        <Text style={styles.text_header}>WELCOME TO</Text>
+        <ImageBackground
+            source={{uri:'https://mpdigital.id/wp-content/uploads/2020/08/siladen-aerial.jpg'}}
+            style={styles.loginImage}>
+               <Text style={styles.text_header}>WELCOME TO</Text>
           <Text style={styles.text_header}>SULUT360</Text>
+              </ImageBackground>
+       
         </View>
         <View style={styles.footer}>
           <View style={styles.titlesWrapper}>
@@ -72,9 +76,6 @@ const LoginScreen = () =>{
           </View>
           {user ? (
         <View style={styles.fotoContainer}>
-          {/* <Image style={styles.image} source={{ uri: user.picture.data.url }} />
-          <Text style={styles.text}>{user.name}</Text>
-          <Text style={styles.text}>{user.email}</Text> */}
         </View> 
       ) :
           <SocialButton
@@ -85,17 +86,6 @@ const LoginScreen = () =>{
             onPress={() =>this.signUpFacebook()}
           />}
 
-        <SocialButton
-            buttonTitle="Sign In with Google"
-            btnType="google"
-            color="#FFFFFF"
-            backgroundColor="#FF6838"
-          // onPress={() => this.signInWithGoogleAsync()}
-        /> 
-
-        <TouchableOpacity onPress={goTomainmenu}>
-          <Text style={{top:30, left:170, fontWeight: 'bold', fontSize: 18}}>skip</Text>
-        </TouchableOpacity>
           </View>
       </View>
     );
@@ -107,13 +97,6 @@ const styles = StyleSheet.create({
     flex: 1, 
     backgroundColor: '#F5F3F3'
   },
-  header: {
-      flex: 2,
-      justifyContent: 'flex-end',
-      paddingHorizontal: 20,
-      paddingBottom: 20,
-      backgroundColor: '#FF6200',
-  },
   footer: {
       flex: 1,
       top: -20,
@@ -124,10 +107,16 @@ const styles = StyleSheet.create({
       paddingHorizontal: 20,
       paddingVertical: 30
   },
+  loginImage: {
+    height:height*0.5,
+    width:412,
+  },
   text_header: {
       color: '#fff',
       fontWeight: 'bold',
-      fontSize: 30
+      fontSize: 30,
+      top:310,
+      left:10
   },
     titlesWrapper:{
     marginTop : 5,

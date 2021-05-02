@@ -1,41 +1,34 @@
 {
   "project_info": {
-    "project_number": "941330496846",
-    "project_id": "sulut360-e4792",
-    "storage_bucket": "sulut360-e4792.appspot.com"
+    "project_number": "241992910621",
+    "firebase_url": "https://sulut-8af84-default-rtdb.firebaseio.com",
+    "project_id": "sulut-8af84",
+    "storage_bucket": "sulut-8af84.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:941330496846:android:b3c144a7a6ed8ba3ff721f",
+        "mobilesdk_app_id": "1:241992910621:android:a3d808afc52d16c9ca43f4",
         "android_client_info": {
-          "package_name": "com.sulut360"
+          "package_name": "host.exp.exponent"
         }
       },
       "oauth_client": [
         {
-          "client_id": "941330496846-8tdr8rto54d8ld0rm1bti2dgpub6t18u.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.sulut360",
-            "certificate_hash": "28bf00e99387142f348d6d5563111ead326b23d0"
-          }
-        },
-        {
-          "client_id": "941330496846-9etf8ncdfj75bgjsdovvglmsp1v9h74l.apps.googleusercontent.com",
+          "client_id": "241992910621-4i0spfffbed6aqnhh1b2tp063cr84tj1.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyDHUNRfFZv0IAyKz_3qAJbnwSc_P45xZ5k"
+          "current_key": "AIzaSyATtcrSzqPok4TzMgb2LmvR61_UFPoji80"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "941330496846-9etf8ncdfj75bgjsdovvglmsp1v9h74l.apps.googleusercontent.com",
+              "client_id": "241992910621-4i0spfffbed6aqnhh1b2tp063cr84tj1.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
